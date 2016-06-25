@@ -1,0 +1,59 @@
+viewport
+	origin 0 -200 100
+	topleft -100 -10 200
+	bottomleft -100 -10 0
+	topright 100 -10 200
+endviewport
+materials
+	entry
+		name chess
+		reflect 0
+		refract 1
+	endentry
+	texture
+		name chess
+		file models/chess.bmp
+		relative 0 0 255 0 0 255
+	endtexture
+	entry
+		name glass
+		color 100 100 200
+		reflect 0
+		refract 1.1
+        alpha 0.1
+	endentry
+endmaterials
+lights
+	reference
+		power 1
+		distance 160
+	endreference
+    point
+		coords 0 100 199
+		power 1
+    endpoint
+	point
+		coords 0 -200 100
+		power 1
+    endpoint
+endlights
+geometry
+	triangle
+		material chess
+		vertex -100 0 0
+		vertex -100 200 0
+		vertex 100 0 0
+	endtriangle
+	quadrangle
+		material chess
+		vertex -100 200 0
+		vertex -100 200 200
+		vertex 100 200 200
+		vertex 100 200 0
+	endquadrangle
+	sphere
+		coords 0 100 100
+		radius 40
+		material glass
+	endsphere
+endgeometry

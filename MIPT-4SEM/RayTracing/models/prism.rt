@@ -1,0 +1,89 @@
+viewport
+	origin 0 -200 100
+	topleft -100 -10 200
+	bottomleft -100 -10 0
+	topright 100 -10 200
+endviewport
+materials
+	entry
+		name glass
+		color 100 100 200
+		reflect 0
+		refract 1.7
+        alpha 0.001
+	endentry
+	entry
+		name green
+		color 0 255 0
+		reflect 0
+		refract 0
+	endentry
+	entry
+		name red
+		color 255 0 0
+		reflect 0
+		refract 0
+	endentry
+	entry
+		name blue
+		color 0 0 255
+		reflect 0
+		refract 0
+	endentry
+	entry
+		name white
+		color 255 255 255
+		reflect 0
+		refract 0
+	endentry
+endmaterials
+lights
+	reference
+		power 1
+		distance 160
+	endreference
+    point
+		coords 0 100 199
+		power 1
+    endpoint
+	point
+		coords 0 -200 100
+		power 1
+    endpoint
+endlights
+geometry
+	quadrangle
+		material white
+		vertex -100 0 0
+		vertex 100 0 0
+		vertex 100 200 0
+		vertex -100 200 0
+	endquadrangle
+	triangle
+		vertex 50 100 0	
+		vertex 0 100 100
+		vertex -50 100 0		
+		material glass
+	endtriangle
+	triangle
+		vertex 50 121 0
+		vertex -50 121 0
+		vertex 0 121 100
+		material glass
+	endtriangle
+	sphere
+		coords 0 150 20
+		radius 20
+		material red
+	endsphere
+	sphere
+		coords -50 150 20
+		radius 20
+		material green
+	endsphere
+	sphere
+		coords 50 150 20
+		radius 20
+		material blue
+	endsphere
+endgeometry

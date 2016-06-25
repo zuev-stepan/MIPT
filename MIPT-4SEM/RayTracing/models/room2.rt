@@ -1,0 +1,118 @@
+viewport
+	origin 0 -200 100
+	topleft -100 -10 200
+	bottomleft -100 -10 0
+	topright 100 -10 200
+endviewport
+materials
+	entry
+		name idealglass
+		color 100 100 200
+		reflect 0
+		refract 1
+        alpha 0.1
+	endentry
+	entry
+		name glass
+		color 100 100 200
+		reflect 0
+		refract 1.2
+        alpha 0.1
+	endentry
+	entry
+		name mirror
+		color 200 255 200
+		reflect 0.9
+		refract 0
+	endentry
+	entry
+		name green
+		color 0 255 0
+		reflect 0
+		refract 0
+	endentry
+	entry
+		name red
+		color 255 0 0
+		reflect 0
+		refract 0
+	endentry
+	entry
+		name blue
+		color 0 0 255
+		reflect 0
+		refract 0
+	endentry
+	entry
+		name white
+		color 255 255 255
+		reflect 0
+		refract 0
+	endentry
+endmaterials
+lights
+	reference
+		power 1
+		distance 160
+	endreference
+    point
+		coords 0 100 199
+		power 1
+    endpoint
+	point
+		coords 0 -200 100
+		power 1
+    endpoint
+endlights
+geometry
+	quadrangle
+		material white
+		vertex -100 0 0
+		vertex 100 0 0
+		vertex 100 200 0
+		vertex -100 200 0
+	endquadrangle
+	quadrangle
+		material white
+		vertex -100 0 200
+		vertex 100 0 200
+		vertex 100 200 200
+		vertex -100 200 200
+	endquadrangle
+	quadrangle
+		material white
+		vertex -100 200 0
+		vertex -100 200 200
+		vertex 100 200 200
+		vertex 100 200 0
+	endquadrangle
+	quadrangle
+		material red
+		vertex -100 0 0
+		vertex -100 200 0
+		vertex -100 200 200
+		vertex -100 0 200
+	endquadrangle
+	quadrangle
+		material blue
+		vertex 100 0 0
+		vertex 100 200 0
+		vertex 100 200 200
+		vertex 100 0 200
+	endquadrangle
+	sphere
+		coords -60 160 40
+		radius 40
+		material idealglass
+	endsphere
+	sphere
+		coords 0 100 100
+		radius 40
+		material glass
+	endsphere
+	sphere
+		coords 40 140 60
+		radius 60
+		material mirror
+	endsphere
+endgeometry
